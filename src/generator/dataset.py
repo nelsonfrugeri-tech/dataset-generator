@@ -8,6 +8,7 @@ class DatasetSwaggerGenerator:
         self.client = OpenAIClient()
 
     def generate_dataset(self):
+        application = "YOUR_APPLICATION_NAME"
         swagger_file = os.path.join(
             os.path.dirname(os.path.abspath(__file__)), "file", "source", "swagger.json"
         )
@@ -28,7 +29,7 @@ class DatasetSwaggerGenerator:
                 '{"role": "assistant", "content": "Resposta da LLM"}, '
                 ']}]}'
                 f"Entenda profundamente o contrato de API, cada endpoint e seu propósito: {swagger_content}."
-                "Seu objetivo é gerar 30 perguntas e respostas para cada endpoint do LLM Gate, simulando uma conversa entre um desenvolvedor de software e um chatbot Copilot que tem total conhecimento do contrato de API da aplicação LLM Gate. "
+                "Seu objetivo é gerar 30 perguntas e respostas para cada endpoint do {application}, simulando uma conversa entre um desenvolvedor de software e um chatbot Copilot que tem total conhecimento do contrato de API da aplicação {application}. "
                 "Simule perguntas e respostas para cada endpoint fornecido pelo contrato de API, o desenvolvedor vai querer ver exemplos de cURL para usar um endpoint, vai querer saber o que cada parâmetro significa, vai fazer perguntas relacionadas aos contratos de API e você deve gerar essas perguntas e respostas simulando uma conversa real. "
                 "Simulate questions and answers for each endpoint provided by the API, the developer will want to see cURL examples to use an endpoint, will want to know what each parameter means, will ask questions related to the application's API contracts and you should generate these questions and answers simulating a real conversation."
                 "As perguntas e respostas devem ser escritas em português do Brasil, e você deve evitar traduzir nomes próprios, termos técnicos e jargões de desenvolvimento de software."
@@ -103,9 +104,9 @@ class DatasetReadmeGenerator:
                 '{"role": "assistant", "content": "Resposta da LLM"}, '
                 ']}]}'
                 f"Entenda profundamente o contrato de API, cada endpoint e seu propósito: {swagger_content}."
-                "Seu objetivo é gerar 30 perguntas e respostas para o conteúdo fornecido, simulando uma conversa entre um desenvolvedor de software e um chatbot Copilot que tem total conhecimento do projeto LLM Gate. "                
-                "Simule perguntas e respostas para cada endpoint fornecido pelo projeto, o desenvolvedor vai querer ver exemplos de cURL para usar um endpoint, vai querer saber o que cada parâmetro significa, vai fazer perguntas relacionadas aos contratos de API do LLM Gate e você deve gerar essas perguntas e respostas simulando uma conversa real. "
-                "Crie diversos cenários de perguntas e respostas, desde conversas mais simples até diálogos complexos, simulando diferentes tipos de perguntas que um desenvolvedor de software faria para um chatbot Copilot que tem total conhecimento do LLM Gate."
+                "Seu objetivo é gerar 30 perguntas e respostas para o conteúdo fornecido, simulando uma conversa entre um desenvolvedor de software e um chatbot Copilot que tem total conhecimento do projeto {application}. "                
+                "Simule perguntas e respostas para cada endpoint fornecido pelo projeto, o desenvolvedor vai querer ver exemplos de cURL para usar um endpoint, vai querer saber o que cada parâmetro significa, vai fazer perguntas relacionadas aos contratos de API do {application} e você deve gerar essas perguntas e respostas simulando uma conversa real. "
+                "Crie diversos cenários de perguntas e respostas, desde conversas mais simples até diálogos complexos, simulando diferentes tipos de perguntas que um desenvolvedor de software faria para um chatbot Copilot que tem total conhecimento do {application}."
                 "As perguntas e respostas devem ser escritas em português do Brasil, e você deve evitar traduzir nomes próprios, termos técnicos e jargões de desenvolvimento de software."
             ),
             "usecase_question": (
