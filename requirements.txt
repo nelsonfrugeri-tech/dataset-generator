@@ -1,0 +1,6 @@
+# Component
+black==24.4.2
+pydantic~=2.7.3
+
+# GenAI Model
+openai~=1.50.2
